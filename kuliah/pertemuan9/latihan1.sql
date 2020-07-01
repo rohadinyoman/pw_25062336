@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 25 Jun 2020 pada 18.59
+-- Waktu pembuatan: 01 Jul 2020 pada 21.05
 -- Versi server: 10.1.37-MariaDB
 -- Versi PHP: 7.3.1
 
@@ -29,11 +29,22 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `mahasiswa` (
+  `id` int(50) NOT NULL,
   `nama` text NOT NULL,
-  `npm` int(8) NOT NULL,
-  `kelas` text NOT NULL,
-  `email` text NOT NULL
+  `nrp` int(8) NOT NULL,
+  `jurusan` text NOT NULL,
+  `email` text NOT NULL,
+  `gambar` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `mahasiswa`
+--
+
+INSERT INTO `mahasiswa` (`id`, `nama`, `nrp`, `jurusan`, `email`, `gambar`) VALUES
+(1, 'rohadi', 12345677, 'teknik mesin', 'rohadi@gmail.com', 'download.png'),
+(2, 'nyoman', 12345678, 'teknik sipil', 'nyoman@gmail.com', ''),
+(3, 'wiguna', 12345679, 'teknik industri', 'wiguna@gmail.com', '');
 
 --
 -- Indexes for dumped tables
@@ -43,7 +54,7 @@ CREATE TABLE `mahasiswa` (
 -- Indeks untuk tabel `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
-  ADD PRIMARY KEY (`npm`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
@@ -53,7 +64,7 @@ ALTER TABLE `mahasiswa`
 -- AUTO_INCREMENT untuk tabel `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
-  MODIFY `npm` int(8) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
